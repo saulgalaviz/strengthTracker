@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*") //Clients are able to call Lift related rest APIs. The * makes it so that any client can call.
 @AllArgsConstructor //Creates constructor for us
 @RestController //Can handle HTTP requests by having class turn into spring MVC controller
 @RequestMapping("/api/lifts") //define base URL for all rest APIs being built within controller

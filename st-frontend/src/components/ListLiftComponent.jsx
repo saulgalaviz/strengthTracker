@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react' 
 {/* Below uses state hook by including {useState} and we also imported effect hook {useEffect} */}
-import { listLifts } from '../services/LiftService'
+import { listLifts, deleteLift } from '../services/LiftService'
 // Import below functions from react-router-dom in order to add routing
 import { useNavigate } from 'react-router-dom'
 
@@ -14,15 +14,34 @@ const ListLiftComponent = () => {
 
     {/* In order to make REST API call (AXIOS) in react function component, effect hook needs to be used*/}
     useEffect(() => {
+        getAllLifts();
+    }, [])
+
+    function getAllLifts(){
         listLifts().then((response) => {
             setLifts(response.data);
         }).catch(error => {
             console.error(error);
         })
-    }, [])
+    }
 
     function addNewLift(){
         navigator("/add-lift")
+    }
+
+    function updateLift(id){
+        // Uses backtick symbol
+        navigator(`/edit-lift/${id}`)
+    }
+
+    function removeLift(id){
+        console.log(id);
+
+        deleteLift(id).then((response) => {
+            getAllLifts();
+        }).catch(error => {
+            console.error(error);
+        })
     }
 
 
@@ -38,6 +57,7 @@ const ListLiftComponent = () => {
                         <th>Lifted Weight</th>
                         <th>Workout Split</th>
                         <th>Muscle Group</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +69,10 @@ const ListLiftComponent = () => {
                                 <td>{lift.liftedWeight}</td>
                                 <td>{lift.workoutSplit}</td>
                                 <td>{lift.muscleGroup}</td>
+                                <td>
+                                    <button className="btn btn-info" onClick={() => updateLift(lift.id)}>Update</button>
+                                    <button className="btn btn-danger" onClick={() => removeLift(lift.id)} style={{marginLeft: "10px"}}>Delete</button>
+                                </td>
                             </tr>)
                     }
                 </tbody>

@@ -14,15 +14,15 @@ function App() {
           <HeaderComponent />
             <Routes>
               {/* //http://localhost:3000 */}
-              <Route path = '/' element= {<ListLiftComponent />}> </Route>
+              <Route path = "/" element= {<ListLiftComponent />}> </Route>
               
               {/* //http://localhost:3000/lifts */}
-              <Route path = '/lifts' element = {<ListLiftComponent />}> </Route>
+              <Route path = "/lifts" element = {<ListLiftComponent />}> </Route>
               {/* //http://localhost:3000/add-lift */}
-              <Route path = '/add-lift' element = {<LiftComponent />}> </Route>
-              
+              <Route path = "/add-lift" element = {<LiftComponent />}> </Route>
+              {/* //http://localhost:3000/edit-lift/1 */}
+              <Route path = "/edit-lift/:id" element = {<LiftComponent />}> </Route>
             </Routes>
-          
           <FooterComponent />
       </BrowserRouter>
     </>

@@ -1,12 +1,12 @@
-package net.javaguides.st.service.impl;
+package st.service.impl;
 
 import lombok.AllArgsConstructor;
-import net.javaguides.st.dto.LiftDto;
-import net.javaguides.st.entity.Lift;
-import net.javaguides.st.exception.ResourceNotFoundException;
-import net.javaguides.st.mapper.LiftMapper;
-import net.javaguides.st.repository.LiftRepository;
-import net.javaguides.st.service.LiftService;
+import st.dto.LiftDto;
+import st.entity.Lift;
+import st.exception.ResourceNotFoundException;
+import st.mapper.LiftMapper;
+import st.repository.LiftRepository;
+import st.service.LiftService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

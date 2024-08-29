@@ -1,6 +1,6 @@
-package net.javaguides.st.repository;
+package st.repository;
 
-import net.javaguides.st.entity.Lift;
+import st.entity.Lift;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 //Don't need to annotate with @Repository since SimpleJPARepository.class being extended already annotates it

@@ -1,7 +1,7 @@
-package net.javaguides.st.mapper;
+package st.mapper;
 
-import net.javaguides.st.dto.LiftDto;
-import net.javaguides.st.entity.Lift;
+import st.dto.LiftDto;
+import st.entity.Lift;
 
 //Class to transport data between entity and dto
 public class LiftMapper {

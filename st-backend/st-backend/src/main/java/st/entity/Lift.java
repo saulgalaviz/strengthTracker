@@ -1,4 +1,4 @@
-package net.javaguides.st.entity;
+package st.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

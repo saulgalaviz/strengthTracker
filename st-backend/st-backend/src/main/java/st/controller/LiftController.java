@@ -1,10 +1,10 @@
-package net.javaguides.st.controller;
+package st.controller;
 
 import lombok.AllArgsConstructor;
-import net.javaguides.st.dto.LiftDto;
-import net.javaguides.st.entity.Lift;
-import net.javaguides.st.service.LiftService;
-import org.apache.coyote.Response;
+import st.dto.LiftDto;
+//import net.javaguides.st.entity.Lift;
+import st.service.LiftService;
+//import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

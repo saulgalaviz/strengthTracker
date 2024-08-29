@@ -1,4 +1,4 @@
-package net.javaguides.st.exception;
+package st.exception;
 
 
 import org.springframework.http.HttpStatus;

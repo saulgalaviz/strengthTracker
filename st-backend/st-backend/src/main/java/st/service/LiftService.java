@@ -1,6 +1,6 @@
-package net.javaguides.st.service;
+package st.service;
 
-import net.javaguides.st.dto.LiftDto;
+import st.dto.LiftDto;
 
 import java.util.List;
 

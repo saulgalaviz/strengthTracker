@@ -1,4 +1,4 @@
-package net.javaguides.st.dto;
+package st.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

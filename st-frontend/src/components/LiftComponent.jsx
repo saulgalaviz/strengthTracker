@@ -99,91 +99,93 @@ const LiftComponent = () => {
 
         function pageTitle(){
             if(id){
-                return <h2 className="text-center">Update Lift</h2>
+                return <h1 className="text-center">Update Lift</h1>
             }
             else{
-                return <h2 className="text-center">Add Lift</h2>
+                return <h1 className="text-center">Add Lift</h1>
             }
 
         }
 
     return (
-        <div className="container">
-            <br/><br/>
-            <div className="row">
-                <div className="card col-md-6 offset-md-3 offset-md-3">
-                    <br/>
-                    {
-                        pageTitle()
-                    }
-                    <div className="card-body">
-                        <form>
-                            <div className="form-group mb-2">
-                                <label className="form-label">Lift Name:</label>
-                                <input 
-                                    type="text"
-                                    placeholder="Enter Lift Name"
-                                    name="liftName"
-                                    value={liftName}
-                                    // backtick symbol below
-                                    className={`form-control ${ errors.liftName ? "is-invalid":""}`}
-                                    onChange={(e) => setLiftName(e.target.value)}
-                                >
-                                </input>
-                                { errors.liftName && <div className="invalid-feedback"> {errors.liftName} </div>}
-                            </div>
+        <div className="background-color">
+            <div className="container">
+                <br/><br/><br/><br/><br/>
+                <div className="row">
+                    <div className="card col-md-6 offset-md-3 offset-md-3 bg-light">
+                        <br/>
+                        {
+                            pageTitle()
+                        }
+                        <div className="card-body">
+                            <form>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">Lift Name:</label>
+                                    <input 
+                                        type="text"
+                                        placeholder="Enter Lift Name"
+                                        name="liftName"
+                                        value={liftName}
+                                        // backtick symbol below
+                                        className={`form-control ${ errors.liftName ? "is-invalid":""}`}
+                                        onChange={(e) => setLiftName(e.target.value)}
+                                    >
+                                    </input>
+                                    { errors.liftName && <div className="invalid-feedback"> {errors.liftName} </div>}
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label">Lifted Weight:</label>
-                                <input 
-                                    type="text"
-                                    placeholder="Enter Lifted Weight"
-                                    name="liftedWeight"
-                                    value={liftedWeight}
-                                    // backtick symbol below
-                                    className={`form-control ${ errors.liftedWeight ? "is-invalid":""}`}
-                                    onChange={(e) => setLiftedWeight(e.target.value)}
-                                >
-                                </input>
-                                { errors.liftedWeight && <div className="invalid-feedback"> {errors.liftedWeight} </div>}
-                            </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">Lifted Weight:</label>
+                                    <input 
+                                        type="text"
+                                        placeholder="Enter Lifted Weight"
+                                        name="liftedWeight"
+                                        value={liftedWeight}
+                                        // backtick symbol below
+                                        className={`form-control ${ errors.liftedWeight ? "is-invalid":""}`}
+                                        onChange={(e) => setLiftedWeight(e.target.value)}
+                                    >
+                                    </input>
+                                    { errors.liftedWeight && <div className="invalid-feedback"> {errors.liftedWeight} </div>}
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label">Workout Split:</label>
-                                <input 
-                                    type="text"
-                                    placeholder="Enter Workout Split"
-                                    name="workoutSplit"
-                                    value={workoutSplit}
-                                    // backtick symbol below
-                                    className={`form-control ${ errors.workoutSplit ? "is-invalid":""}`}
-                                    onChange={(e) => setWorkoutSplit(e.target.value)}
-                                >
-                                </input>
-                                { errors.workoutSplit && <div className="invalid-feedback"> {errors.workoutSplit} </div>}
-                            </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">Workout Split:</label>
+                                    <input 
+                                        type="text"
+                                        placeholder="Enter Workout Split"
+                                        name="workoutSplit"
+                                        value={workoutSplit}
+                                        // backtick symbol below
+                                        className={`form-control ${ errors.workoutSplit ? "is-invalid":""}`}
+                                        onChange={(e) => setWorkoutSplit(e.target.value)}
+                                    >
+                                    </input>
+                                    { errors.workoutSplit && <div className="invalid-feedback"> {errors.workoutSplit} </div>}
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label">Muscle Group:</label>
-                                <input 
-                                    type="text"
-                                    placeholder="Enter Muscle Group"
-                                    name="muscleGroup"
-                                    value={muscleGroup}
-                                    // backtick symbol below
-                                    className={`form-control ${ errors.muscleGroup ? "is-invalid":""}`}
-                                    onChange={(e) => setMuscleGroup(e.target.value)}
-                                >
-                                </input>
-                                { errors.muscleGroup && <div className="invalid-feedback"> {errors.muscleGroup} </div>}
-                            </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">Muscle Group:</label>
+                                    <input 
+                                        type="text"
+                                        placeholder="Enter Muscle Group"
+                                        name="muscleGroup"
+                                        value={muscleGroup}
+                                        // backtick symbol below
+                                        className={`form-control ${ errors.muscleGroup ? "is-invalid":""}`}
+                                        onChange={(e) => setMuscleGroup(e.target.value)}
+                                    >
+                                    </input>
+                                    { errors.muscleGroup && <div className="invalid-feedback"> {errors.muscleGroup} </div>}
+                                </div>
 
-                            <button className="btn btn-success" onClick={saveOrUpdateLift}>Submit</button>
-                        </form>
+                                <button className="btn btn-success" onClick={saveOrUpdateLift}>Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
     )
 }
 

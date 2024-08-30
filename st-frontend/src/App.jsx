@@ -1,4 +1,5 @@
 import './App.css'
+import AboutComponent from './components/AboutComponent'
 import FooterComponent from './components/FooterComponent'
 import HeaderComponent from './components/HeaderComponent'
 import LiftComponent from './components/LiftComponent'
@@ -22,6 +23,8 @@ function App() {
               <Route path = "/add-lift" element = {<LiftComponent />}> </Route>
               {/* //http://localhost:3000/edit-lift/1 */}
               <Route path = "/edit-lift/:id" element = {<LiftComponent />}> </Route>
+              {/* //http://localhost:3000/about */}
+              <Route path = "/about" element = {<AboutComponent />}> </Route>
             </Routes>
           <FooterComponent />
       </BrowserRouter>

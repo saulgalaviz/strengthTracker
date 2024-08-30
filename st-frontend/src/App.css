@@ -1,3 +1,8 @@
+h1{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
 .footer{
     position: absolute;
     bottom: 0;
@@ -5,5 +10,32 @@
     height: 50px;
     background-color: black;
     text-align: center;
+    align-content: center;
     color: white;
 }
+
+.set-table-scroll {
+    max-height:650px;
+    overflow-y: auto;
+    
+}
+
+.set-table-scroll thead th { 
+    position: sticky; 
+    top: 0; 
+  } 
+
+.background-color{
+    background:linear-gradient(#000000, #0C8BCB);
+    min-height: 90vh
+}
+
+
+.blue-color{
+    color: #0C8BCB;
+}
+
+.white-color{
+    color: rgb(214, 214, 214)
+}
+

@@ -44,39 +44,48 @@ const ListLiftComponent = () => {
         })
     }
 
+    function navToAbout(){
+        navigator("/about")
+    }
+
 
     return(
-        <div className ="container">
-            <h2 className = "text-center">List of Lifts</h2>
-            <button className = "btn btn-primary mb-2"  onClick={addNewLift}>Add Lift</button>
-            <table className = "table table-stripped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Lift ID</th>
-                        <th>Lift Name</th>
-                        <th>Lifted Weight</th>
-                        <th>Workout Split</th>
-                        <th>Muscle Group</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        lifts.map(lift => 
-                            <tr key={lift.id}>
-                                <td>{lift.id}</td>
-                                <td>{lift.liftName}</td>
-                                <td>{lift.liftedWeight}</td>
-                                <td>{lift.workoutSplit}</td>
-                                <td>{lift.muscleGroup}</td>
-                                <td>
-                                    <button className="btn btn-info" onClick={() => updateLift(lift.id)}>Update</button>
-                                    <button className="btn btn-danger" onClick={() => removeLift(lift.id)} style={{marginLeft: "10px"}}>Delete</button>
-                                </td>
-                            </tr>)
-                    }
-                </tbody>
-            </table>
+        <div className="background-color">
+            <div className ="container white-color">
+                <br/>
+                <h1 className = "text-center">List of Lifts</h1>
+                <button className = "btn btn-primary blue-color mb-2"  onClick={addNewLift}>Add Lift</button>
+                <div className="set-table-scroll">
+                    <table className = "table table-striped table-bordered table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Lift ID</th>
+                                <th>Lift Name</th>
+                                <th>Lifted Weight</th>
+                                <th>Workout Split</th>
+                                <th>Muscle Group</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                lifts.map(lift => 
+                                    <tr key={lift.id}>
+                                        <td>{lift.id}</td>
+                                        <td>{lift.liftName}</td>
+                                        <td>{lift.liftedWeight}</td>
+                                        <td>{lift.workoutSplit}</td>
+                                        <td>{lift.muscleGroup}</td>
+                                        <td>
+                                            <button className="btn btn-info" onClick={() => updateLift(lift.id)}>Update</button>
+                                            <button className="btn btn-danger" onClick={() => removeLift(lift.id)} style={{marginLeft: "10px"}}>Delete</button>
+                                        </td>
+                                    </tr>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     )
 }

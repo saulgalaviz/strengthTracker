@@ -18,7 +18,7 @@ const AboutComponent = () => {
                     <br/>
                     <a className="white-color" href="mailto:saulgalaviz97@gmail.com">saulgalaviz97@gmail.com</a>
                     <br/>
-                    <a target ="_blank" className="white-color" href="https://www.linkedin.com/in/saulgalaviz">https://www.linkedin.com/in/saulgalaviz</a>
+                    <a target ="_blank" className="white-color" href="https://www.linkedin.com/in/saulgalaviz">linkedin.com/in/saulgalaviz</a>
                 </h3>
             </div>
         </div> 

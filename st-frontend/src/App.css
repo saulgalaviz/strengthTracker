@@ -3,6 +3,24 @@ h1{
     color: white;
 }
 
+span {
+    list-style:none;
+  }
+  span a{
+    display:inline-block; 
+    padding:0 7px; 
+    position:relative;
+  }
+  span a:not(:last-child)::after{
+    content:""; 
+    border:1px solid #e2e2e2;
+    border-width: 1px 1px 0 0;
+    position:absolute; 
+    right:-10px; 
+    top: 8px; 
+    height:70%;
+  }
+
 .footer{
     position: absolute;
     bottom: 0;

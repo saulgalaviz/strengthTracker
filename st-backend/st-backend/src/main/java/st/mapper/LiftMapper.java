@@ -10,7 +10,9 @@ public class LiftMapper {
         return new LiftDto(
                 lift.getId(),
                 lift.getLiftName(),
+                lift.getLiftDate(),
                 lift.getLiftedWeight(),
+                lift.getBodyWeight(),
                 lift.getWorkoutSplit(),
                 lift.getMuscleGroup()
         );
@@ -20,7 +22,9 @@ public class LiftMapper {
         return new Lift(
                 liftDto.getId(),
                 liftDto.getLiftName(),
+                liftDto.getLiftDate(),
                 liftDto.getLiftedWeight(),
+                liftDto.getBodyWeight(),
                 liftDto.getWorkoutSplit(),
                 liftDto.getMuscleGroup()
         );

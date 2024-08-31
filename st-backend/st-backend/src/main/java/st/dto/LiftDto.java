@@ -15,7 +15,9 @@ import lombok.Setter;
 public class LiftDto {
     private Long id;
     private String liftName;
-    private double liftedWeight;
+    private String liftDate;
+    private int liftedWeight;
+    private int bodyWeight;
     private String workoutSplit;
     private String muscleGroup;
 }

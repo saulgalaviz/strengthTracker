@@ -58,7 +58,9 @@ public class LiftServiceImpl implements LiftService {
 
         //update lift object
         lift.setLiftName(updatedLift.getLiftName());
+        lift.setLiftDate(updatedLift.getLiftDate());
         lift.setLiftedWeight(updatedLift.getLiftedWeight());
+        lift.setBodyWeight(updatedLift.getBodyWeight());
         lift.setWorkoutSplit(updatedLift.getWorkoutSplit());
         lift.setMuscleGroup(updatedLift.getMuscleGroup());
 

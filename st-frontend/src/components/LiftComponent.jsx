@@ -2,21 +2,24 @@ import React, { useState } from "react";
 import { createLift, getLift, updateLift } from "../services/LiftService";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { usePopper } from 'react-popper'
 
 
 
 const LiftComponent = () => {
 
         const [liftName, setLiftName] = useState('')
+        const [liftDate, setLiftDate] = useState('')
         const [liftedWeight, setLiftedWeight] = useState('')
+        const [bodyWeight, setBodyWeight] = useState('')
         const [workoutSplit, setWorkoutSplit] = useState('')
         const [muscleGroup, setMuscleGroup] = useState('')
 
         const {id} = useParams();
         const [errors, setErrors] = useState({
             liftName: '',
+            liftDate: '',
             liftedWeight: '',
+            bodyWeight: '',
             workoutSplit: '',
             muscleGroup: ''
         })
@@ -27,7 +30,9 @@ const LiftComponent = () => {
             if(id){
                 getLift(id).then((response) => {
                     setLiftName(response.data.liftName);
+                    setLiftDate(response.data.liftDate);
                     setLiftedWeight(response.data.liftedWeight);
+                    setBodyWeight(response.data.bodyWeight);
                     setWorkoutSplit(response.data.workoutSplit);
                     setMuscleGroup(response.data.muscleGroup);
                 }).catch(error => {
@@ -40,7 +45,7 @@ const LiftComponent = () => {
             e.preventDefault();
 
             if(validateForm()){
-                const lift = {liftName, liftedWeight, workoutSplit, muscleGroup}
+                const lift = {liftName, liftDate, liftedWeight, bodyWeight, workoutSplit, muscleGroup}
                 console.log(lift)
 
                 if(id){
@@ -73,11 +78,25 @@ const LiftComponent = () => {
                 errorsCopy.liftName = "Lift Name is required"
                 valid = false;
             }
+
+            if(liftDate.trim()){
+                errorsCopy.liftDate = ""
+            }else{
+                errorsCopy.liftDate = "Lift Date is required"
+                valid = false;
+            }
             
             if(liftedWeight.trim()){
                 errorsCopy.liftedWeight = ""
             }else{
                 errorsCopy.liftedWeight = "Lifted Weight is required"
+                valid = false;
+            }
+
+            if(bodyWeight.trim()){
+                errorsCopy.bodyWeight = ""
+            }else{
+                errorsCopy.bodyWeight = "Body Weight is required"
                 valid = false;
             }
 
@@ -139,6 +158,21 @@ const LiftComponent = () => {
                                 </div>
 
                                 <div className="form-group mb-2">
+                                    <label className="form-label">Lift Date:</label>
+                                    <input 
+                                        type="text"
+                                        placeholder="Enter Lift Date"
+                                        name="liftDate"
+                                        value={liftDate}
+                                        // backtick symbol below
+                                        className={`form-control ${ errors.liftName ? "is-invalid":""}`}
+                                        onChange={(e) => setLiftDate(e.target.value)}
+                                    >
+                                    </input>
+                                    { errors.liftDate && <div className="invalid-feedback"> {errors.liftDate} </div>}
+                                </div>
+
+                                <div className="form-group mb-2">
                                     <label className="form-label">Lifted Weight:</label>
                                     <input 
                                         type="text"
@@ -151,6 +185,21 @@ const LiftComponent = () => {
                                     >
                                     </input>
                                     { errors.liftedWeight && <div className="invalid-feedback"> {errors.liftedWeight} </div>}
+                                </div>
+
+                                <div className="form-group mb-2">
+                                    <label className="form-label">Body Weight:</label>
+                                    <input 
+                                        type="text"
+                                        placeholder="Enter Body Weight"
+                                        name="bodyWeight"
+                                        value={bodyWeight}
+                                        // backtick symbol below
+                                        className={`form-control ${ errors.bodyWeight ? "is-invalid":""}`}
+                                        onChange={(e) => setBodyWeight(e.target.value)}
+                                    >
+                                    </input>
+                                    { errors.bodyWeight && <div className="invalid-feedback"> {errors.bodyWeight} </div>}
                                 </div>
 
                                 <div className="form-group mb-2">

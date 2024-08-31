@@ -44,11 +44,6 @@ const ListLiftComponent = () => {
         })
     }
 
-    function navToAbout(){
-        navigator("/about")
-    }
-
-
     return(
         <div className="background-color">
             <div className ="container white-color">
@@ -61,7 +56,9 @@ const ListLiftComponent = () => {
                             <tr>
                                 <th>Lift ID</th>
                                 <th>Lift Name</th>
+                                <th>Lift Date</th>
                                 <th>Lifted Weight</th>
+                                <th>Body Weight</th>
                                 <th>Workout Split</th>
                                 <th>Muscle Group</th>
                                 <th>Actions</th>
@@ -73,7 +70,9 @@ const ListLiftComponent = () => {
                                     <tr key={lift.id}>
                                         <td>{lift.id}</td>
                                         <td>{lift.liftName}</td>
+                                        <td>{lift.liftDate}</td>
                                         <td>{lift.liftedWeight}</td>
+                                        <td>{lift.bodyWeight}</td>
                                         <td>{lift.workoutSplit}</td>
                                         <td>{lift.muscleGroup}</td>
                                         <td>

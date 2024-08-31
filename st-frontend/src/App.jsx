@@ -4,7 +4,7 @@ import FooterComponent from './components/FooterComponent'
 import HeaderComponent from './components/HeaderComponent'
 import LiftComponent from './components/LiftComponent'
 import ListLiftComponent from './components/ListLiftComponent'
-// import VisualComponent from './components/VisualComponent'
+import VisualComponent from './components/VisualComponent'
 // Import below functions from react-router-dom in order to add routing
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
@@ -27,7 +27,7 @@ function App() {
               {/* //http://localhost:3000/about */}
               <Route path = "/about" element = {<AboutComponent />}> </Route>
               {/* //http://localhost:3000/visual */}
-              {/* <Route path = "/visual" element = {<VisualComponent />}> </Route> */}
+              <Route path = "/visual" element = {<VisualComponent />}> </Route>
             </Routes>
           <FooterComponent />
       </BrowserRouter>

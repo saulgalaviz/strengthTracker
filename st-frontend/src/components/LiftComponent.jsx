@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { createLift, getLift, updateLift } from "../services/LiftService";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { usePopper } from 'react-popper'
+
+
 
 const LiftComponent = () => {
 
@@ -108,6 +111,7 @@ const LiftComponent = () => {
         }
 
     return (
+        
         <div className="background-color">
             <div className="container">
                 <br/><br/><br/><br/><br/>
@@ -177,6 +181,17 @@ const LiftComponent = () => {
                                     >
                                     </input>
                                     { errors.muscleGroup && <div className="invalid-feedback"> {errors.muscleGroup} </div>}
+                                </div>
+
+                                <div className="dropdown">
+                                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dropdown button
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a className="dropdown-item" >Action</a></li>
+                                        <li><a className="dropdown-item" >Another action</a></li>
+                                        <li><a className="dropdown-item" >Something else here</a></li>
+                                    </ul>
                                 </div>
 
                                 <button className="btn btn-success" onClick={saveOrUpdateLift}>Submit</button>

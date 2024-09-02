@@ -185,7 +185,7 @@ const LiftComponent = () => {
                                 <div className="input-group mb-4">
                                     <label className="col-form-label" style={{marginRight: "78px"}}>Lift Date:</label>
                                     <input 
-                                        type="text"
+                                        type="date"
                                         placeholder="Enter Lift Date"
                                         name="liftDate"
                                         value={liftDate}
@@ -200,7 +200,7 @@ const LiftComponent = () => {
                                 <div className="input-group mb-4">
                                     <label className="form-label col-form-label" style={{marginRight: "43px"}}>Lifted Weight:</label>
                                     <input 
-                                        type="text" 
+                                        type="number" 
                                         placeholder="Enter Lifted Weight"
                                         name="liftedWeight"
                                         value={liftedWeight}
@@ -215,7 +215,7 @@ const LiftComponent = () => {
                                 <div className="input-group mb-4">
                                     <label className="form-label col-form-label" style={{marginRight: "47px"}}>Body Weight:</label>
                                     <input 
-                                        type="text"
+                                        type="number"
                                         placeholder="Enter Body Weight"
                                         name="bodyWeight"
                                         value={bodyWeight}

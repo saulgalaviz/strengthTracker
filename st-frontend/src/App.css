@@ -3,6 +3,10 @@ h1{
     color: white;
 }
 
+/* select:not(:checked) {
+  color: gray;
+} */
+
 span {
     list-style:none;
   }
@@ -56,4 +60,11 @@ span {
 .white-color{
     color: rgb(214, 214, 214)
 }
+
+.black-color{
+  color: black;
+}
+
+
+
 

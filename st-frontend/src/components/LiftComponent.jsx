@@ -131,18 +131,18 @@ const LiftComponent = () => {
 
     return (
         
-        <div className="background-color">
-            <div className="container">
-                <br/><br/><br/><br/><br/>
-                <div className="row">
-                    <div className="card col-md-6 offset-md-3 offset-md-3 bg-light">
+        <div className="background-color ">
+            <br/><br/><br/>
+            <div className="container ">
+                <div className="row ">
+                    <div className="card  col-md-6 offset-md-3 offset-md-3 bg-light">
                         <br/>
                         {
                             pageTitle()
                         }
-                        <div className="card-body">
+                        <div className="card-body ">
                             <form>
-                                <div className="form-group mb-2">
+                                {/* <div className="form-group mb-2">
                                     <label className="form-label">Lift Name:</label>
                                     <input 
                                         type="text"
@@ -155,27 +155,52 @@ const LiftComponent = () => {
                                     >
                                     </input>
                                     { errors.liftName && <div className="invalid-feedback"> {errors.liftName} </div>}
+                                </div> */}
+
+                                <div className="input-group mb-4">
+                                    <label className="col-form-label" style={{marginRight: "70px"}}>Lift Name:</label>
+                                    {/* backtick symbol below */}
+                                    <select className={`form-select ${ errors.liftName ? "is-invalid":""}`} onChange={(e) => setLiftName(e.target.value)}>
+                                        <option selected>Select Lift</option>
+                                        <option value="Bench Press">Bench Press</option>
+                                        <option value="Chin-up">Chin-up</option>
+                                        <option value="Deadlift">Deadlift</option>
+                                        <option value="Dumbbell One-Arm Bicep Curl">Dumbbell One-Arm Bicep Curl</option>
+                                        <option value="Dumbbell One-Arm Row">Dumbbell One-Arm Row</option>
+                                        <option value="Hip Thrust">Hip Thrust</option>
+                                        <option value="Incline Bench Press">Incline Bench Press</option>
+                                        <option value="Lateral Pulldown">Lateral Pulldown</option>
+                                        <option value="Lateral Raise">Lateral Raise</option>
+                                        <option value="Overhead Press">Overhead Press</option>
+                                        <option value="Pull-up">Pull-up</option>
+                                        <option value="Romanian Deadlift">Romanian Deadlift</option>
+                                        <option value="Squat">Squat</option>
+                                        <option value="Tricep Rope Pushdown">Tricep Rope Pushdown</option>                                                                             
+                                    </select>
+                                    { errors.liftName && <div className="invalid-feedback"> {errors.liftName} </div>}
                                 </div>
 
-                                <div className="form-group mb-2">
-                                    <label className="form-label">Lift Date:</label>
+                                
+
+                                <div className="input-group mb-4">
+                                    <label className="col-form-label" style={{marginRight: "78px"}}>Lift Date:</label>
                                     <input 
                                         type="text"
                                         placeholder="Enter Lift Date"
                                         name="liftDate"
                                         value={liftDate}
                                         // backtick symbol below
-                                        className={`form-control ${ errors.liftName ? "is-invalid":""}`}
+                                        className={`form-control ${ errors.liftDate ? "is-invalid":""}`}
                                         onChange={(e) => setLiftDate(e.target.value)}
                                     >
                                     </input>
                                     { errors.liftDate && <div className="invalid-feedback"> {errors.liftDate} </div>}
                                 </div>
 
-                                <div className="form-group mb-2">
-                                    <label className="form-label">Lifted Weight:</label>
+                                <div className="input-group mb-4">
+                                    <label className="form-label col-form-label" style={{marginRight: "43px"}}>Lifted Weight:</label>
                                     <input 
-                                        type="text"
+                                        type="text" 
                                         placeholder="Enter Lifted Weight"
                                         name="liftedWeight"
                                         value={liftedWeight}
@@ -187,8 +212,8 @@ const LiftComponent = () => {
                                     { errors.liftedWeight && <div className="invalid-feedback"> {errors.liftedWeight} </div>}
                                 </div>
 
-                                <div className="form-group mb-2">
-                                    <label className="form-label">Body Weight:</label>
+                                <div className="input-group mb-4">
+                                    <label className="form-label col-form-label" style={{marginRight: "47px"}}>Body Weight:</label>
                                     <input 
                                         type="text"
                                         placeholder="Enter Body Weight"
@@ -202,7 +227,7 @@ const LiftComponent = () => {
                                     { errors.bodyWeight && <div className="invalid-feedback"> {errors.bodyWeight} </div>}
                                 </div>
 
-                                <div className="form-group mb-2">
+                                {/* <div className="form-group mb-2">
                                     <label className="form-label">Workout Split:</label>
                                     <input 
                                         type="text"
@@ -215,9 +240,22 @@ const LiftComponent = () => {
                                     >
                                     </input>
                                     { errors.workoutSplit && <div className="invalid-feedback"> {errors.workoutSplit} </div>}
+                                </div> */}
+
+                                <div className="input-group mb-4">
+                                    <label className="col-form-label " style={{marginRight: "42px"}}>Workout Split:</label>
+                                    {/* backtick symbol below */}
+                                    <select className={`form-select ${ errors.workoutSplit ? "is-invalid":""}`} id="inputGroupSelect01" onChange={(e) => setWorkoutSplit(e.target.value)}>
+                                        <option selected className="placeholder-color">Select Workout Split</option>
+                                        <option value="Push, Pull, Legs">Push, Pull, Legs</option>
+                                        <option value="Full Body">Full Body</option>
+                                        <option value="Upper, Lower">Upper, Lower</option>
+                                        <option value="Bro Split">Bro Split</option>
+                                    </select>
+                                    { errors.workoutSplit && <div className="invalid-feedback"> {errors.workoutSplit} </div>}
                                 </div>
 
-                                <div className="form-group mb-2">
+                                {/* <div className="form-group mb-2">
                                     <label className="form-label">Muscle Group:</label>
                                     <input 
                                         type="text"
@@ -230,20 +268,24 @@ const LiftComponent = () => {
                                     >
                                     </input>
                                     { errors.muscleGroup && <div className="invalid-feedback"> {errors.muscleGroup} </div>}
+                                </div> */}
+
+                                <div className="input-group mb-4" >
+                                    <label className="col-form-label " style={{marginRight: "40px"}}>Muscle Group:</label>
+                                    {/* backtick symbol below */}
+                                        <select className={`form-select ${ errors.muscleGroup ? "is-invalid":""}`} onChange={(e) => setMuscleGroup(e.target.value)}>
+                                            <option selected>Select Muscle Group</option>
+                                            <option value="Abdominals">Abdominals</option>
+                                            <option value="Arms">Arms</option>
+                                            <option value="Back">Back</option>
+                                            <option value="Chest">Chest</option>
+                                            <option value="Legs">Legs</option>
+                                            <option value="Shoulders">Shoulders</option>
+                                        </select>
+                                    { errors.muscleGroup && <div className="invalid-feedback"> {errors.muscleGroup} </div>}
                                 </div>
 
-                                <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropdown button
-                                    </button>
-                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a className="dropdown-item" >Action</a></li>
-                                        <li><a className="dropdown-item" >Another action</a></li>
-                                        <li><a className="dropdown-item" >Something else here</a></li>
-                                    </ul>
-                                </div>
-
-                                <button className="btn btn-success" onClick={saveOrUpdateLift}>Submit</button>
+                                <button className="btn btn-success " onClick={saveOrUpdateLift} style={{marginLeft: "525px"}}>Submit</button>
                             </form>
                         </div>
                     </div>

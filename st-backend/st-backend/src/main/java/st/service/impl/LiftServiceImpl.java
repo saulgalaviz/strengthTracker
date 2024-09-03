@@ -10,6 +10,7 @@ import st.service.LiftService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Service //build container to build Spring beans for class
@@ -38,6 +39,21 @@ public class LiftServiceImpl implements LiftService {
 
         //Call expects DTO, so we convert using mapper
         return LiftMapper.mapToLiftDto(lift);
+    }
+
+    @Override
+    public List<LiftDto> getLiftsByLiftName(String liftName) {
+        List<Lift> lifts = liftRepository.findAll();
+        List<Lift> matchingLifts = new ArrayList<>();
+        
+        for(Lift lift : lifts)
+        {
+            if(lift.getLiftName().equals(liftName))
+                matchingLifts.add(lift);
+        }
+
+        return matchingLifts.stream().map((lift) -> LiftMapper.mapToLiftDto(lift))
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -25,11 +25,18 @@ public class LiftController { //Controller layer depends on service layer
         return new ResponseEntity<>(savedLift, HttpStatus.CREATED);
     }
 
-    //Build Get Lift REST API
-    @GetMapping("{id}") //requiring id to be passed via API as a URI var
+    //Build Get Lift REST API. Using regex to match only Long requests to avoid ambiguity.
+    @GetMapping("{id:\\d+}") //requiring id to be passed via API as a URI var
     public ResponseEntity<LiftDto> getLiftByID(@PathVariable("id") Long liftID){ //@PathVariable maps template variable to liftID arg
         LiftDto liftDto = liftService.getLiftById(liftID);
         return ResponseEntity.ok(liftDto);
+    }
+
+    //Build Get All Lifts with Matching Lift Name REST API. Using regex to match only String requests to avoid ambiguity.
+    @GetMapping("{liftName:.*\\D.*}")
+    public ResponseEntity<List<LiftDto>> getLiftsByLiftName(@PathVariable("liftName") String liftName){
+        List<LiftDto> lifts = liftService.getLiftsByLiftName(liftName);
+        return ResponseEntity.ok(lifts);
     }
 
     //Build Get All Lifts REST API

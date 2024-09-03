@@ -9,6 +9,8 @@ public interface LiftService {
 
     LiftDto getLiftById(Long liftID);
 
+    List<LiftDto>  getLiftsByLiftName(String liftName);
+
     List<LiftDto> getAllLifts();
 
     LiftDto updateLift(Long liftID, LiftDto updatedLift);

@@ -42,13 +42,7 @@ const LiftComponent = () => {
                     console.error(error);
                 })
             }
-        }, [id] )
-
-        const preventMinus = (e) => {
-            if (e.code === 'Minus' || e.includ) {
-                e.preventDefault();
-            }
-        };
+        } , [id])
 
         function saveOrUpdateLift(e){
             e.preventDefault();
@@ -256,10 +250,10 @@ const LiftComponent = () => {
                                 </div>
 
                                 <div className="input-group mb-4">
-                                    <label className="form-label col-form-label" style={{marginRight: "43px"}}>Lifted Weight:</label>
+                                    <label className="form-label col-form-label" style={{marginRight: "10px"}}>Lifted Weight (lbs):</label>
                                     <input 
                                         type="number" 
-                                        placeholder="Enter Lifted Weight"
+                                        placeholder="Enter Lifted Weight (lbs)"
                                         name="liftedWeight"
                                         value={liftedWeight}
                                         // backtick symbol below
@@ -274,10 +268,10 @@ const LiftComponent = () => {
                                 </div>
 
                                 <div className="input-group mb-4">
-                                    <label className="form-label col-form-label" style={{marginRight: "47px"}}>Body Weight:</label>
+                                    <label className="form-label col-form-label" style={{marginRight: "15px"}}>Body Weight (lbs):</label>
                                     <input 
                                         type="number"
-                                        placeholder="Enter Body Weight"
+                                        placeholder="Enter Body Weight (lbs)"
                                         name="bodyWeight"
                                         value={bodyWeight}
                                         oninput="validity.valid||(value='');"

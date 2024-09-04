@@ -6,8 +6,12 @@ const REST_API_BASE_URL = "http://localhost:8080/api/lifts"; //points to backend
 export const listLifts = () => {
     return axios.get(REST_API_BASE_URL);
 }
-
 // export const listLifts = () => axios.get(REST_API_BASE_URL);
+
+//REST client code to get matching lifts from the REST API with passed liftName string
+export const listMatchingLifts = (liftName) => {
+    return axios.get(REST_API_BASE_URL + '/' + liftName);
+}
 
 export const createLift = (lift) => axios.post(REST_API_BASE_URL, lift);
 

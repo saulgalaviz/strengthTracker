@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react' 
+import React, { useEffect,useState} from 'react' 
 {/* Below uses state hook by including {useState} and we also imported effect hook {useEffect} */}
 import { listLifts, deleteLift } from '../services/LiftService'
 // Import below functions from react-router-dom in order to add routing
@@ -57,8 +57,8 @@ const ListLiftComponent = () => {
                                 <th>Lift ID</th>
                                 <th>Lift Name</th>
                                 <th>Lift Date</th>
-                                <th>Lifted Weight</th>
-                                <th>Body Weight</th>
+                                <th>Lifted Weight (lbs)</th>
+                                <th>Body Weight (lbs)</th>
                                 <th>Workout Split</th>
                                 <th>Muscle Group</th>
                                 <th>Actions</th>

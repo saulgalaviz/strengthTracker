@@ -8,34 +8,56 @@ const VisualComponent = () => {
 
   const [matchingLifts, setMatchingLifts] = useState([])
   const [liftName, setLiftName] = useState('')
+
   const defaultItem = "Bench Press"
-  
-    const options = {
+  // const bodyWeights = matchingLifts.map(lift => lift.bodyWeight);
+  // const liftWeights = matchingLifts.map(lift => lift.liftedWeight);
+
+  const options = {
     chart: {
       type: "line"
     },
     xAxis: {
+      
       title: {text: "Date"},
-      // categories: ["Dev", "Feb"]
-      categories: matchingLifts.map(lift => {lift.liftDate})
+      type: 'datetime',
+      //different way to plot date directly using categories. Would require functions to manipulate data before plotting such as sorting.
+      // categories: matchingLifts.map(lift => {
+      //   return Highcharts.dateFormat('%m-%d-%Y', new Date(lift.liftDate).getTime());
+      // })
+      labels:{
+        format: '{value:%m-%d-%Y}'
+      }
     },
     yAxis: {
-      title: {text: "Weight"},
-      // categories: ["Fat", "Feb", "Fat", "Feb"]
-      categories: [matchingLifts.map(lift => {lift.liftWeight})]
+      title: {text: "Weight (lbs)"}
     },
+
     title: {
-      text: "Bench Press"
+      text: liftName + " Trend"
     },
+    
     series: [
       {
-        // data: getBodyWeights(),
-        name: liftName
+        data: getLiftWeights(),
+        name: liftName,
+        dataLabels: {
+          enabled: true
+      }
       },
       {
-        // data: //getBodyWeights(),
-        
-        name: "Body Weight"
+        data: getBodyWeights(),
+        name: "Body Weight",
+        dataLabels: {
+          enabled: true
+      }
+      },
+      {
+        data: getBodyWeightRatio(),
+        name: "Bodyweight Ratio (x100)",
+        dataLabels: {
+          enabled: true
+      }
       }
     ]
   };
@@ -53,21 +75,51 @@ const VisualComponent = () => {
         setLiftName(defaultItem);
     }, [liftName])
 
-  function getBodyWeights()
-  {
-    // const result = Object.fromEntries(matchingLifts.map(lift => [lift.bodyWeight].concat(",")))
-    const bodyWeights = matchingLifts.map(lift => lift.bodyWeight);
-    const joinedBodyWeights = bodyWeights.join(",");
-    var arr = joinedBodyWeights.split(",")
-    console.log(arr)
-    
-    return joinedBodyWeights;
-  }
+    function getLiftWeights()
+    {
+      var processedData = matchingLifts.map((lift, i) => {
+        return [new Date(lift.liftDate).getTime(), lift.liftedWeight]
+      });
+      
+      processedData = processedData.sort((a, b) => a[0] - b[0]);
+      console.log(processedData)
+      return processedData;
+    }
 
-  function getLiftWeights()
-  {
+    function getBodyWeights()
+    {
+      var processedData = matchingLifts.map((lift, i) => {
+        return [new Date(lift.liftDate).getTime(), lift.bodyWeight]
+      });
+      
+      processedData = processedData.sort((a, b) => a[0] - b[0]);
+      console.log(processedData)
+      return processedData;
+    }
 
-  }
+    function getBodyWeightRatio()
+    {
+      var processedData = matchingLifts.map((lift, i) => {
+        return [new Date(lift.liftDate).getTime(), Number(((lift.liftedWeight/lift.bodyWeight)).toFixed(2))]
+      });
+      //Number(((lift.liftedWeight/lift.bodyWeight)*100).toFixed(2))
+      
+      processedData = processedData.sort((a, b) => a[0] - b[0]);
+      console.log(processedData)
+      return processedData;
+    }
+
+  // function getBodyWeights()
+  // {
+  //   let bodyWeights = matchingLifts.map(lift => lift.bodyWeight);
+  //   return bodyWeights;
+  // }
+
+  // function getLiftWeights()
+  // {
+  //   let liftWeights = matchingLifts.map(lift => lift.liftedWeight);
+  //   return liftWeights;
+  // }
 
   return (
     <div className="background-color">
@@ -97,7 +149,6 @@ const VisualComponent = () => {
                   <div>
                     <HighchartsReact
                     highcharts={Highcharts} 
-                    // constructorType={'stockChart'}
                     options={options} 
                     />
                   </div>

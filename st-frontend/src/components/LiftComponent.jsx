@@ -24,7 +24,6 @@ const LiftComponent = () => {
             liftedWeight: '',
             bodyWeight: '',
             workoutSplit: '',
-            // muscleGroup: ''
         })
 
         const navigator = useNavigate();
@@ -37,7 +36,6 @@ const LiftComponent = () => {
                     setLiftedWeight(response.data.liftedWeight);
                     setBodyWeight(response.data.bodyWeight);
                     setWorkoutSplit(response.data.workoutSplit);
-                    // setMuscleGroup(response.data.muscleGroup);
                 }).catch(error => {
                     console.error(error);
                 })
@@ -110,13 +108,6 @@ const LiftComponent = () => {
                 errorsCopy.workoutSplit = "Workout Split is required"
                 valid = false;
             }
-            
-            // if(muscleGroup.trim()){
-            //     errorsCopy.muscleGroup = ""
-            // }else{
-            //     errorsCopy.muscleGroup = "Muscle Group is required"
-            //     valid = false;
-            // }
 
             setErrors(errorsCopy);
 

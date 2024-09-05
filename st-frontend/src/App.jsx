@@ -5,7 +5,6 @@ import HeaderComponent from './components/HeaderComponent'
 import LiftComponent from './components/LiftComponent'
 import ListLiftComponent from './components/ListLiftComponent'
 import VisualComponent from './components/VisualComponent'
-import TestVisualComponent from './components/TestVisualComponent'
 // Import below functions from react-router-dom in order to add routing
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 

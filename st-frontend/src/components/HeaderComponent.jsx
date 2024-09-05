@@ -11,12 +11,6 @@ const HeaderComponent = () => {
                         <a className="navbar-brand " href="http://localhost:3000/visual">Visual</a>
                         <a className="navbar-brand" href="http://localhost:3000/about">About</a>
                         </span>
-                        {/* <li style="display:inline-block;">
-                            
-                        </li>
-                        <li style="display:inline-block;">
-                            
-                        </li> */}
                     </nav>
                 </div>
             </header>

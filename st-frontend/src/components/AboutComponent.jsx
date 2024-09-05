@@ -6,13 +6,15 @@ const AboutComponent = () => {
             <div className="container text-center white-color">
                 <br/><br/><br/>
                 <h1>
-                     Have you ever been curious how you compare to the rest of the world in strength? 
-                     <br/><br/>
                      For some, lifting weights is a hobby. For others, daily life brings on labor which results in strength gains.
                      <br/><br/>
-                     Through passion of coding and passion for wellbeing, Saul Galaviz has gone ahead and created this full stack project to allow you to connect with others.
+                     Have you ever been curious how you compare to the rest of the world in strength? 
+                     <br/><br/>
+                     Using online strength guidelines, strength levels can be calculated with the following equation:
+                     <br/>
+                     strength = lifted weight / body weight
                 </h1>
-                <br/><br/><br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/><br/>
                 <h3>
                     Contact 
                     <br/>

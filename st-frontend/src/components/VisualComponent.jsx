@@ -173,7 +173,7 @@ const VisualComponent = () => {
   }
   function getLiftRatioStandards()
   {
-    let liftRatioStandards = [];
+    let liftRatioStandards = []
     if(liftName == "Bench Press")
       liftRatioStandards = [
         { level: "Beginner", maleRatio: '0.50x', femaleRatio: '0.25x' },
@@ -291,66 +291,71 @@ const VisualComponent = () => {
   }
 
   return (
-    <div className="background-color">
-      <br/>
-      <div className ="container white-color">
-        <div className="row ">
-          <div className="card  col-md-10 offset-md-1 offset-md-1 ">
-            <div className="input-group ">
-              <select className="mt-3 blue-color" onChange={(e) => setLiftName(e.target.value)}>
-                <option value="Bench Press">Bench Press</option>
-                <option value="Chin-up">Chin-up</option>
-                <option value="Deadlift">Deadlift</option>
-                <option value="Dumbbell One-Arm Bicep Curl">Dumbbell One-Arm Bicep Curl</option>
-                <option value="Dumbbell One-Arm Row">Dumbbell One-Arm Row</option>
-                <option value="Hip Thrust">Hip Thrust</option>
-                <option value="Incline Bench Press">Incline Bench Press</option>
-                <option value="Lateral Pulldown">Lateral Pulldown</option>
-                <option value="Lateral Raise">Lateral Raise</option>
-                <option value="Overhead Press">Overhead Press</option>
-                <option value="Pull-up">Pull-up</option>
-                <option value="Romanian Deadlift">Romanian Deadlift</option>
-                <option value="Squat">Squat</option>
-                <option value="Tricep Rope Pushdown">Tricep Rope Pushdown</option>   
-              </select>
+    <div className="background-color body-visual">
+      <br/><br/><br/>
+      <div className ="card-group white-color offset-md-1 offset-md-1 ">
+          <div className="row">
+            <div className="col-md-9">
+              <div className="row">
+                <div className=" card   ">
+                    <div className="input-group ">
+                      <select className="mt-3 blue-color" onChange={(e) => setLiftName(e.target.value)}>
+                        <option value="Bench Press">Bench Press</option>
+                        <option value="Chin-up">Chin-up</option>
+                        <option value="Deadlift">Deadlift</option>
+                        <option value="Dumbbell One-Arm Bicep Curl">Dumbbell One-Arm Bicep Curl</option>
+                        <option value="Dumbbell One-Arm Row">Dumbbell One-Arm Row</option>
+                        <option value="Hip Thrust">Hip Thrust</option>
+                        <option value="Incline Bench Press">Incline Bench Press</option>
+                        <option value="Lateral Pulldown">Lateral Pulldown</option>
+                        <option value="Lateral Raise">Lateral Raise</option>
+                        <option value="Overhead Press">Overhead Press</option>
+                        <option value="Pull-up">Pull-up</option>
+                        <option value="Romanian Deadlift">Romanian Deadlift</option>
+                        <option value="Squat">Squat</option>
+                        <option value="Tricep Rope Pushdown">Tricep Rope Pushdown</option>   
+                          </select>
+                      </div>
+                    <div>
+                      <HighchartsReact
+                      highcharts={Highcharts} 
+                      options={options} 
+                      />
+                    </div>
+                    <div>
+                      <HighchartsReact
+                      highcharts={Highcharts} 
+                      options={options2} 
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-2">
+                <div className=" card">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>Strength level for {liftName}:</th>
+                        <th>Male Lift to Weight Ratio:</th>
+                        <th>Female Lift to Weight Ratio:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {
+                      liftRatioStandards.map(standard => 
+                      <tr key ={standard.level}>
+                        <td>{standard.level}</td>
+                        <td>{standard.maleRatio}</td>
+                        <td>{standard.femaleRatio}</td>
+                      </tr>)
+                    }
+                    </tbody>
+                  </table>
+                </div>
             </div>
-            <div>
-              <HighchartsReact
-              highcharts={Highcharts} 
-              options={options} 
-              />
-            </div>
-            <div>
-              <HighchartsReact
-              highcharts={Highcharts} 
-              options={options2} 
-              />
-            </div>
-          </div>
-          <br/><br/><br/>
-          <div className="card  col-md-10 offset-md-1 offset-md-1 ">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Strength Level:</th>
-                  <th>Male Lift to Weight Ratio:</th>
-                  <th>Female Lift to Weight Ratio:</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  liftRatioStandards.map(standard => 
-                  <tr>
-                    <td>{standard.level}</td>
-                    <td>{standard.maleRatio}</td>
-                    <td>{standard.femaleRatio}</td>
-                  </tr>)
-                }
-              </tbody>
-            </table>
           </div>
         </div>
-      </div>
     </div>
   )
 }

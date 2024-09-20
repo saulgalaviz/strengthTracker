@@ -18,11 +18,11 @@ Languages: Java, JavaScript
 # Page to update an existing lift. Values are pulled from existing entry.
 ![alt text](https://imgur.com/DkwKEsJ.png)
 
-# Visuals page. Here, we see all our plotted Squat data in chronologic order. We also see a list displaying popular lift strength compared to the data. A strength ratio is calculated using the equation (lift weight/body weight).
+# Visuals page. Here, we see all our plotted Squat data in chronological order. We also see a list on the top right displaying popular metrics in regards to lift standards. A strength ratio is calculated using the equation (lift weight/body weight).
 ![alt text](https://imgur.com/2pCZELp.png)
 
-# Dropdown to select other lifts
-![alt text](https://imgur.com/cMDXXrK.png)
+# Dropdown to select other lifts.
+![alt text](https://imgur.com/rWuHD7r.png)
 
 # Selected Bench Press from dropdown. Here, we see our user had lost weight and gone up in lifting weight, achieving a higher lift ratio over time.
 ![alt text](https://imgur.com/e7lLX8R.png)

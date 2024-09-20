@@ -10,13 +10,13 @@ Languages: Java, JavaScript
 
 # Demo
 # Home page displaying List of Lifts.
-![alt text](https://imgur.com/IhG2h74.png)
+![alt text](https://imgur.com/AYmvPyt.png)
 
 # Page to add a new lift.
 ![alt text](https://imgur.com/7n3ZSpD.png)
 
 # Page to update an existing lift. Values are pulled from existing entry.
-![alt text](https://imgur.com/DkwKEsJ)
+![alt text](https://imgur.com/DkwKEsJ.png)
 
 # Visuals page. Here, we see all our plotted Squat data in chronologic order. We also see a list displaying popular lift strength compared to the data. A strength ratio is calculated using the equation (lift weight/body weight).
 ![alt text](https://imgur.com/2pCZELp.png)

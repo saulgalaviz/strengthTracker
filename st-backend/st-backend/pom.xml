@@ -42,7 +42,8 @@
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
+			<version>8.0.33</version>
+			<!-- <scope>runtime</scope> -->
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -68,6 +69,34 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.3</version>
+				<configuration>
+					<container>
+						<ports>
+							<port>8080</port>
+						</ports>
+						<environment>
+							<DB_HOST>mysql-server</DB_HOST>
+							<DB_PORT>3306</DB_PORT>
+							<DB_NAME>st</DB_NAME>
+							<DB_USER>root</DB_USER>
+							<DB_PASSWORD>1deathwing</DB_PASSWORD>
+						</environment>
+					</container>
+					<to>
+						<image>docker.io/saulgalaviz/strength-tracker-backend</image>
+					</to>
+					<extraDirectories>
+						<paths>
+							<path>src/main/resources</path>
+						</paths>
+					</extraDirectories>
+					<extraClasspath>/app/libs</extraClasspath>
 				</configuration>
 			</plugin>
 		</plugins>

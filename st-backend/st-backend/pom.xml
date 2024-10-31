@@ -80,13 +80,6 @@
 						<ports>
 							<port>8080</port>
 						</ports>
-						<environment>
-							<DB_HOST>mysql-server</DB_HOST>
-							<DB_PORT>3306</DB_PORT>
-							<DB_NAME>st</DB_NAME>
-							<DB_USER>root</DB_USER>
-							<DB_PASSWORD>1deathwing</DB_PASSWORD>
-						</environment>
 					</container>
 					<to>
 						<image>docker.io/saulgalaviz/strength-tracker-backend</image>

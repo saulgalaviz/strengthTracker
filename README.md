@@ -2,6 +2,7 @@
 
 Full Stack extracurricular project with CRUD API functionality using Spring Boot framework and MySQL with a frontend React view.
 -----------------------------------------------------------------------------------------------  
+Site: https://www.strength-tracker.com/
 Concepts: Full Stack
 
 Tools: Spring Boot, MySQL, React, Vite, Bootstrap, Axios, Postman
